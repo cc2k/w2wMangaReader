@@ -1,0 +1,49 @@
+TODO:
+
+
+Goals:
+- make login part secure
+- make a gallery for searching manga list   --- ongoing (primairly done, still need styles)
+- make a manga reader for reading chapters
+- research to a more complete database than MAL
+- make a last read section
+- make updates page, where all updated manga's are shown
+- make a collection section
+- make a categories/tag section
+- make a settings page
+- make a db for storing users and their collection
+- research if its smarter to use a different db than json
+- research and implement sidebar navigation  -- DONE
+- make search possible into all galleries
+- make the app faster and cleaner
+- make a source selection page, check marking which sources to use
+- firebase or make an api so you can check user info(collections stuff) -i need help with this part!! Jassper is helping with this
+
+
+
+
+Ideas:
+- make it simple to switch sources when a manga is not loading on a source for ie.
+- make it free, or otherwise research if adds are "allowed"
+- rating system for manga (jenn)
+- scrolling through pages while reading them instead of per page swap (jenn)
+- light/dark, maybe different modes?
+- use 2 identifiers, 1 for source 1 for manga
+- use a mangasource class or a source and handeling?
+
+
+- let the viewer choose what search option they want for looking up manga
+//
+//    mangas
+//
+//    1   2   3   4
+//
+//    5   6   7   8
+//
+//
+//
+//    mangasource1
+//    1   2   3   more
+//
+//    mangasource 2
+//    4   5   6   more

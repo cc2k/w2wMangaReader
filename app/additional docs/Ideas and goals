@@ -3,7 +3,7 @@ TODO:
 
 Goals:
 - make login part secure
-- make a gallery for searching manga list   --- ongoing (primairly done, still need styles)
+- make a gallery for searching manga list   --- ongoing (primarily done, still need styles)
 - make a manga reader for reading chapters
 - research to a more complete database than MAL
 - make a last read section
@@ -17,7 +17,8 @@ Goals:
 - make search possible into all galleries
 - make the app faster and cleaner
 - make a source selection page, check marking which sources to use
-- firebase or make an api so you can check user info(collections stuff) -i need help with this part!! Jassper is helping with this
+- firebase or make an api so you can check user info(collections stuff) -i need help with this part!! Jasper is helping with this
+- make a tab layout in mainActivity? so MangasSeearch can select multiple sources to search? ?
 
 
 
@@ -29,12 +30,12 @@ Ideas:
 - scrolling through pages while reading them instead of per page swap (jenn)
 - light/dark, maybe different modes?
 - use 2 identifiers, 1 for source 1 for manga
-- use a mangasource class or a source and handeling?
+- use a mangasource class or a source and handling?
 
 
 - let the viewer choose what search option they want for looking up manga
 //
-//    mangas
+//    manga's
 //
 //    1   2   3   4
 //

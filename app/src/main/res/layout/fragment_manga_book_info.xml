@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:theme="@style/AppThemeLight.NoActionBar">
 
-    <ImageView
+
+<ImageView
         android:id="@+id/iv_manga_book_manga_cover"
         android:layout_width="150dp"
         android:layout_height="150dp"

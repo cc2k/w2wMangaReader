@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import Classes.JsonHandling;
 import Classes.Manga;
 
-public class MangasSearchFragment extends Fragment {
+public class MangasSearchFragment extends Fragment implements MyAdapterRecyclerView.OnMangaBookClickListener{
     //This activity shows manga from a source, or sources where the reader can select them, check their info and maybe add or not to the collection of the reader.
     //
 
@@ -47,6 +47,7 @@ public class MangasSearchFragment extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
     private Bundle results;
     private ArrayList<Manga> mangaTempList;
+    int containerId;
 
 
     @Nullable
@@ -56,7 +57,7 @@ public class MangasSearchFragment extends Fragment {
         Context context = getActivity();
         recyclerView = view.findViewById(R.id.recyclerview_manga_book);
         mangaTempList = new JsonHandling(context).getMangaBookJson();
-
+    containerId = container.getId();
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
         recyclerView.setHasFixedSize(true);
@@ -66,17 +67,23 @@ public class MangasSearchFragment extends Fragment {
         recyclerView.setLayoutManager(new GridLayoutManager(context, 3));
 
         // specify an adapter (see also next example)
-        mAdapter = new MyAdapterRecyclerView(mangaTempList, context);
+        mAdapter = new MyAdapterRecyclerView(mangaTempList, context,this);
 
-        mAdapter.setOnMangaBookClickListener(new MyAdapterRecyclerView.OnMangaBookClickListener() {
-            @Override
-            public void onMangaBookClick(int position, View view) {
-                Toast.makeText(getContext(), "WHAT?!", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         recyclerView.setAdapter(mAdapter);
 
         return view;
+    }
+
+    @Override
+    public void onMangaBookClick(int position, Manga manga) {
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("MangaBook", mangaTempList.get(position));
+        MangaBookFragment fragmentB = new MangaBookFragment();
+        fragmentB.setArguments(bundle);
+        getActivity().getSupportFragmentManager().beginTransaction()
+                .replace(containerId, fragmentB, "MangaBookFragment")
+                .addToBackStack(null)
+                .commit();
     }
 }

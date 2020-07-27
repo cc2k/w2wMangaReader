@@ -9,6 +9,7 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -32,7 +33,7 @@ public class MangaBookFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_settings, container, false);
+        View view = inflater.inflate(R.layout.fragment_manga_book_info, container, false);
 
         tvMangaBookTitleText = view.findViewById(R.id.tv_manga_book_title_text);
         tvMangaBookAuthorText = view.findViewById(R.id.tv_manga_book_author_text);
@@ -41,21 +42,10 @@ public class MangaBookFragment extends Fragment {
         mangaBookPosterCover = view.findViewById(R.id.iv_manga_book_manga_cover);
 
 
-        //    manga = savedInstanceState.getParcelable("MangaBook");
-
-
-//          mangaBookPosterCover.setImageResource(R.drawable.ic_launcher_background);//TODO
-
-//        //get the information from fragmentMangaSearch here!
-//        Bundle  results;
-//
-//        MainActivity activity = (MainActivity)getActivity();
-//        int position = activity.getBundleMangaBook(0).getInt("position");
-//        manga = activity.getBundleMangaBook(position).getParcelable("MangaBook");//get the position somehow?
+        manga = getArguments().getParcelable("MangaBook");
 
 
         Picasso.get().load(manga.getPosterPicture()).into(mangaBookPosterCover);
-
 
         tvMangaBookTitleText.setText(manga.getTitle());
 
@@ -95,24 +85,5 @@ public class MangaBookFragment extends Fragment {
 
         return view;
     }
-
-//    @Override
-//    public void onCreate(@Nullable Bundle savedInstanceState){
-//        super.onCreate(savedInstanceState);
-//        getParentFragmentManager().setFragmentResultListener("key", this, new FragmentResultListener() {
-//            @Override
-//            public void onFragmentResult(@NonNull String key, @NonNull Bundle bundle) {
-//                // We use a String here, but any type that can be put in a Bundle is supported
-//                String result = bundle.getString("bundleKey");
-//                // Do something with the result...
-//            }
-//        });
-//
-//
-//
-//
-//    }
-
-
 }
 

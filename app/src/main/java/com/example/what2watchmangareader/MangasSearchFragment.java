@@ -3,11 +3,8 @@ package com.example.what2watchmangareader;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.PopupMenu;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -69,7 +66,7 @@ public class MangasSearchFragment extends Fragment implements MyAdapterRecyclerV
         recyclerView.setLayoutManager(new GridLayoutManager(context, 3));
 
         // specify an adapter (see also next example)
-        mAdapter = new MyAdapterRecyclerView(mangaTempList, context, this);
+        mAdapter = new MyAdapterRecyclerView(mangaTempList, this.getActivity(), this, containerId);
 
 
         recyclerView.setAdapter(mAdapter);

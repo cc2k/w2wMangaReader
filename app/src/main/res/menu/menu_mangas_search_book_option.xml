@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/mail"
+    <item android:id="@+id/menus_search_book_details_manga_book"
         android:icon="@drawable/ic_manga_books_of_source"
-        android:title="mail" />
-    <item android:id="@+id/upload"
+        android:title="Details" />
+    <item android:id="@+id/menus_search_book_add_to_collection"
         android:icon="@drawable/ic_user_profile"
-        android:title="upload" />
-    <item android:id="@+id/share"
+        android:title="Add to collection" />
+    <item android:id="@+id/menus_search_book_read_manga"
         android:icon="@drawable/ic_settings"
-        android:title="share" />
+        android:title="Read the manga" />
 
 </menu>

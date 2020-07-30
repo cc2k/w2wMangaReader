@@ -5,6 +5,7 @@ public class User {
     private String username;
     private String password;
     private int userId;
+    private int collectionId;
 
     public String getUsername() {
         return username;
@@ -38,7 +39,7 @@ public class User {
         this.collectionId = collectionId;
     }
 
-    private int collectionId;
+
 
     public User(String username, String password, int userId, int collectionId) {
         this.username = username;

@@ -1,7 +1,7 @@
 package com.example.what2watchmangareader;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,8 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.view.menu.MenuBuilder;
-import androidx.appcompat.view.menu.MenuPopupHelper;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
@@ -27,11 +26,15 @@ public class MyAdapterRecyclerView extends RecyclerView.Adapter<MyAdapterRecycle
     private Context context;
     private OnMangaBookClickListener listener; //private?
     private PopupMenu.OnMenuItemClickListener menuItemClickListener;
+    private FragmentActivity c;
+    int containerId;
 
-    public MyAdapterRecyclerView(ArrayList<Manga> dataSet, Context context, OnMangaBookClickListener listener) {
+    public MyAdapterRecyclerView(ArrayList<Manga> dataSet, FragmentActivity context, OnMangaBookClickListener listener, int containerId) {
         mDataSet = dataSet;
-        this.context = context;
+        c = context;
+        this.containerId = containerId;
         this.listener = listener;
+        this.context = context.getApplicationContext();
        // this.menuItemClickListener = onMenuItemClickListener;
     }
 
@@ -44,7 +47,7 @@ public class MyAdapterRecyclerView extends RecyclerView.Adapter<MyAdapterRecycle
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
         Picasso.get().load(mDataSet.get(position).getPosterPicture()).into(holder.imageViewBookCover);
         holder.tvBookTitle.setText("This is book nr: " + position + " and title " + mDataSet.get(position).getTitle());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -57,8 +60,8 @@ public class MyAdapterRecyclerView extends RecyclerView.Adapter<MyAdapterRecycle
 
         holder.imageViewBookCoverMenu.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                PopupMenu popMenu = new PopupMenu(context.getApplicationContext(), view);
+            public void onClick(final View view) {
+                PopupMenu popMenu = new PopupMenu(context, view);
                 popMenu.getMenuInflater().inflate(R.menu.menu_mangas_search_book_option,popMenu.getMenu());
 
 
@@ -69,13 +72,21 @@ public class MyAdapterRecyclerView extends RecyclerView.Adapter<MyAdapterRecycle
 
                         Toast.makeText(context, "Selected Item: " + menuItem.getTitle(), Toast.LENGTH_SHORT).show();
                         switch (menuItem.getItemId()) {
-                            case R.id.mail:
+                            case R.id.menus_search_book_details_manga_book:
+//                                int containerId = holder.getAdapterPosition()+1;
+                                 Bundle bundle = new Bundle();
+                                        bundle.putParcelable("MangaBook", mDataSet.get(position));
+                                        MangaBookFragment fragmentB = new MangaBookFragment();
+                                        fragmentB.setArguments(bundle);
+                                   c.getSupportFragmentManager().beginTransaction()
+                                                .replace(containerId, fragmentB, "MangaBookFragment")
+                                                .addToBackStack(null)
+                                                .commit();
+                                return true;
+                            case R.id.menus_search_book_add_to_collection:
                                 // do your code
                                 return true;
-                            case R.id.share:
-                                // do your code
-                                return true;
-                            case R.id.upload:
+                            case R.id.menus_search_book_read_manga:
                                 // do your code
                                 return true;
                             default:

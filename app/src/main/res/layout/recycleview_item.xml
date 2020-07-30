@@ -1,24 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:orientation="vertical">
+
     <ImageView
-        android:id="@+id/imageView_bookcover"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_gravity="center"
+        android:id="@+id/iv_book_cover"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         tools:srcCompat="@tools:sample/avatars"
         android:layout_marginBottom="20dp"/>
 
+    <ImageView
+        android:id="@+id/iv_book_cover_menu"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@drawable/ic_settings"
+        android:background="@color/colorAccent"
+        android:layout_marginRight="15dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_book_cover"
+        app:layout_constraintRight_toRightOf="@id/iv_book_cover"
+        />
+
     <TextView
-        android:id="@+id/textView_booktitle"
+        android:id="@+id/tv_book_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintTop_toBottomOf="@id/iv_book_cover_menu"
+        app:layout_constraintRight_toRightOf="@id/iv_book_cover"
+        app:layout_constraintLeft_toLeftOf="@id/iv_book_cover"
         android:text="BookTitle" />
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>

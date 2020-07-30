@@ -3,8 +3,10 @@ package com.example.what2watchmangareader;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -18,7 +20,7 @@ import java.util.ArrayList;
 import Classes.JsonHandling;
 import Classes.Manga;
 
-public class MangasSearchFragment extends Fragment implements MyAdapterRecyclerView.OnMangaBookClickListener{
+public class MangasSearchFragment extends Fragment implements MyAdapterRecyclerView.OnMangaBookClickListener {
     //This activity shows manga from a source, or sources where the reader can select them, check their info and maybe add or not to the collection of the reader.
     //
 
@@ -47,7 +49,7 @@ public class MangasSearchFragment extends Fragment implements MyAdapterRecyclerV
     private RecyclerView.LayoutManager layoutManager;
     private Bundle results;
     private ArrayList<Manga> mangaTempList;
-    int containerId;
+    private int containerId;
 
 
     @Nullable
@@ -55,9 +57,9 @@ public class MangasSearchFragment extends Fragment implements MyAdapterRecyclerV
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_mangas_to_search, container, false);
         Context context = getActivity();
-        recyclerView = view.findViewById(R.id.recyclerview_manga_book);
+        recyclerView = view.findViewById(R.id.rv_manga_book);
         mangaTempList = new JsonHandling(context).getMangaBookJson();
-    containerId = container.getId();
+        containerId = container.getId();
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
         recyclerView.setHasFixedSize(true);
@@ -67,7 +69,7 @@ public class MangasSearchFragment extends Fragment implements MyAdapterRecyclerV
         recyclerView.setLayoutManager(new GridLayoutManager(context, 3));
 
         // specify an adapter (see also next example)
-        mAdapter = new MyAdapterRecyclerView(mangaTempList, context,this);
+        mAdapter = new MyAdapterRecyclerView(mangaTempList, context, this);
 
 
         recyclerView.setAdapter(mAdapter);
@@ -87,3 +89,4 @@ public class MangasSearchFragment extends Fragment implements MyAdapterRecyclerV
                 .commit();
     }
 }
+

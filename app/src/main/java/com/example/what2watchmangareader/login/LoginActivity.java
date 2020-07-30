@@ -32,9 +32,9 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
 
-        tvUsername = (EditText) findViewById(R.id.textView_username);
-        tvPassword = (EditText) findViewById(R.id.textView_password);
-        Button buttonLogin = (Button) findViewById(R.id.button_login);
+        tvUsername = (EditText) findViewById(R.id.et_username);
+        tvPassword = (EditText) findViewById(R.id.et_password);
+        Button buttonLogin = (Button) findViewById(R.id.btn_login);
         buttonLogin.setOnClickListener(onClickButtonLogin);
 
 

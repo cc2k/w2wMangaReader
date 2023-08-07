@@ -1,8 +1,7 @@
 TODO:
 Fix:
-- context memory leaks
-- settings fragment backPressed  will stay under new fragment
-- profile backPress will exit app
+- context memory leaks?
+- change settings fragment to a preference fragment
 
 
 

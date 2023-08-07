@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.what2watchmangareader">
+    package="com.cyberdog.what2watchmangareader">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -13,14 +13,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppThemeLight">
-        <activity android:name=".MainActivity"
+        <activity android:name=".login.FirebaseUIActivity"></activity>
+        <activity
+            android:name=".MainActivity"
             android:theme="@style/AppThemeLight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter></activity>
-        <activity android:name=".login.LoginActivity" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -39,7 +39,7 @@ public class User {
         this.collectionId = collectionId;
     }
 
-
+    public User (){}
 
     public User(String username, String password, int userId, int collectionId) {
         this.username = username;

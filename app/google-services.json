@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "87186755936",
+    "firebase_url": "https://w2wmanga-reader-firebase.firebaseio.com",
+    "project_id": "w2wmanga-reader-firebase",
+    "storage_bucket": "w2wmanga-reader-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:87186755936:android:00bb31a78b46246e958e05",
+        "android_client_info": {
+          "package_name": "com.cyberdog.what2watchmangareader"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "87186755936-b8nvc4eu995ao1o1trj2fl9k45qbafrt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cyberdog.what2watchmangareader",
+            "certificate_hash": "f2781f1b28f29f4eba40640489c8b1787fa2b7ae"
+          }
+        },
+        {
+          "client_id": "87186755936-1odmfqv8478r1iinh423ciuld7o1e5ha.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEzqjDsm2oSeAJOi51ZltgsfDCFZvo0tc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "87186755936-1odmfqv8478r1iinh423ciuld7o1e5ha.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

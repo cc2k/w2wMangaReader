@@ -1,4 +1,4 @@
-package com.example.what2watchmangareader;
+package com.cyberdog.what2watchmangareader;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
